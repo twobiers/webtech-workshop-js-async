@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 function callHttpBin() {
     fetch("https://httpbin.org/status/404")
         .then(res => {

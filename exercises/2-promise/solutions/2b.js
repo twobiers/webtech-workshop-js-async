@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 function fetchWithRejectOnError(url) {
     return fetch(url)
         .then(res => {

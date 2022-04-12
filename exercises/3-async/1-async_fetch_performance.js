@@ -1,19 +1,18 @@
 import fetch from "node-fetch";
 
 async function fetchResults() {
-    const logResult = (name, result) => {
+    const logResult = (name) => {
         console.log(`Successfully fetched Result ${name}`);
-        console.log(result);
     };
 
     const resultA = await fetch("https://httpbin.org/delay/2");
-    logResult("A", resultA);
+    logResult("A");
 
     const resultB = await fetch("https://httpbin.org/delay/1");
-    logResult("B", resultB);
+    logResult("B");
 
     const resultC = await fetch("https://httpbin.org/delay/3");
-    logResult("C", resultC);
+    logResult("C");
 }
 
 const startDate = Date.now();

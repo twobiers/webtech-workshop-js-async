@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "type": "module",
     "dependencies": {
-        "node-fetch": "^3.2.3"
+        "node-fetch": "^3.2.3",
+        "xmlhttprequest-ssl": "^2.0.0"
     }
 }

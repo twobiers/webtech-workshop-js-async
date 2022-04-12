@@ -1,3 +1,6 @@
+import xhr from "xmlhttprequest-ssl";
+const { XMLHttpRequest } = xhr;
+
 /** 
  * Here is a generic example how to use the XMLHttpRequest, you can use
  * It takes an url as an argument and a callback function in error-first style
