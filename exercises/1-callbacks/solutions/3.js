@@ -1,4 +1,4 @@
-import { sendGetHttpRequest } from "../../util/xhr";
+import { sendGetHttpRequest } from "../../util/xhr.js";
 
 // Most likely you will end up with something like this
 function callHttpBin() {

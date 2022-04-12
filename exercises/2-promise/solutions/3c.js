@@ -2,7 +2,7 @@
  * 3 - Write a promise that resolves, when all of the given promises are settled
  *     and prints the result.
  */
- import { givenPromises } from "../3c-promise_combinators";
+ import { givenPromises } from "../3c-promise_combinators.js";
 
 // Built-In (ES2020)
 const allSettled = Promise.allSettled(givenPromises)

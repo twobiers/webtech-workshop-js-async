@@ -2,7 +2,7 @@
  * 1 - Write a promise that resolves, when all promises are fulfilled and 
  *     prints the result
  */
-import { givenPromises } from "../3a-promise_combinators";
+import { givenPromises } from "../3a-promise_combinators.js";
 
 // Built-In solution
 const allSuccessful = Promise.all(givenPromises)

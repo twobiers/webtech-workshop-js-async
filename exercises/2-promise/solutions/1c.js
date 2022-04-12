@@ -1,4 +1,4 @@
-import { sendGetHttpRequest } from "../../util/xhr";
+import { sendGetHttpRequest } from "../../util/xhr.js";
 
 function promisifyGetHttpRequest(url) {
     return new Promise((resolve, reject) => {

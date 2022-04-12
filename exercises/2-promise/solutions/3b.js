@@ -3,7 +3,7 @@
  *     and prints the result.
  *     Bonus: question: will always the same promise be printed? 
  */
- import { givenPromises } from "../3b-promise_combinators";
+ import { givenPromises } from "../3b-promise_combinators.js";
 
 // Built-In solution (ES2021)
 const anySuccessful = Promise.any(givenPromises)

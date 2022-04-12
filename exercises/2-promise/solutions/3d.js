@@ -3,7 +3,7 @@
  *     and prints the result
  *     Bonus: question: will always the same promise be printed? 
  */
-import { givenPromises } from "../3d-promise_combinators";
+import { givenPromises } from "../3d-promise_combinators.js";
 
 // Built-In
 const firstSettled = Promise.race(givenPromises)

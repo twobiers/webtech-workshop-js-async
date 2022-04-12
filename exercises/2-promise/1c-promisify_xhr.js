@@ -4,7 +4,7 @@
  *     A non-2xx response status should be treated as an error.
  */
 
-import { sendGetHttpRequest } from "../util/xhr";
+import { sendGetHttpRequest } from "../util/xhr.js";
 
 /**
  * @param {string} url 

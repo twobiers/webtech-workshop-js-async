@@ -11,7 +11,7 @@
  *    {@link https://httpbin.org/json} and log the response
  */
 
-import { sendGetHttpRequest } from "../util/xhr";
+import { sendGetHttpRequest } from "../util/xhr.js";
 
 
 function callHttpBin() {
