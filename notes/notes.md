@@ -415,7 +415,7 @@ pA.then(res => {
 - Shallow Chaning
 ```js
 const promiseA = () => Promise.resolve("a");
-const promiseB = () => Promise.resolve("b");
+const promiseB = (a) => Promise.resolve(`B: ${a}`);
 
 // So kommen wir wieder zu der Callback Hell. 
 promiseA()
