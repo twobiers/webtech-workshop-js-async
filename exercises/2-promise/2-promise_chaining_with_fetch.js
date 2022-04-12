@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 /**
  * 1 - 
  *      In this exercise we're going to perform an AJAX request using the

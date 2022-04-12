@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 async function fetchResults() {
     const logResult = (name, result) => {
         console.log(`Successfully fetched Result ${name}`);
