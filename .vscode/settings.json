@@ -1,0 +1,11 @@
+{
+    "maptz.regionfolder": {
+        "[javascript]": {
+            "foldEnd": "/* #endregion */",
+            "foldEndRegex": "/\\*[\\s]*#endregion",
+            "foldStart": "/* #region [NAME] */",
+            "foldStartRegex": "^[\\s]*/\\*[\\s]*#region[\\s]*(.*)[\\s]*\\*/[\\s]*$",
+            "defaultFoldStartRegex": "^[\\s]*/\\*[\\s]*#region[\\s]*default\\s(.*)[\\s]*\\*/[\\s]*$"
+        }
+    }
+}

@@ -1,7 +1,7 @@
 /**
  * In this exercise we're going to perform an AJAX request using the
  * {@link https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpReques XMLHttpRequest API}
- * and process the response.
+ * and process the response. You can use the importd helper-function sendGetHttpRequest.
  * We will use {@link https://httpbin.org/} as the server.
  * 
  * Your task is:
@@ -11,29 +11,9 @@
  *    {@link https://httpbin.org/json} and log the response
  */
 
-// Here is a generic example how to use the XMLHttpRequest, you can use
-// #reqion typedef
-/** 
- * @callback RequestCallback
- * @param {XMLHttpRequest} obj - The response object
- */
-// #endregion
+import { sendGetHttpRequest } from "../util/xhr";
 
-/**
- * @param {string} - url
- * @param {RequestCallback} cb - callback
- */
- function sendGetHttpRequest(url, cb) {
-    var req = new XMLHttpRequest();
-    req.onreadystatechange = function() {
-        if(this.readyState === 4) {
-             cb(this);
-        }
-    }
-    req.open("GET", url, true);
-    req.send();
-}
 
 function callHttpBin() {
-
+    // Your solution here
 }

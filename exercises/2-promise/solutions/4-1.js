@@ -8,8 +8,12 @@ const funcThatThrows = () => {
 };
 
 function funcThatReturnsAPromise() {
-    funcThatThrows();
-    return Promise.resolve(42);
+    try {
+        funcThatThrows();
+        return Promise.resolve(42);
+    } catch(err) {
+        return Promise.reject(err);
+    }
 }
 
 // Funktionsaufruf wirft Exception

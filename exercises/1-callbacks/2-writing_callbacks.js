@@ -7,26 +7,30 @@
  *      - setInterval {@link https://developer.mozilla.org/en-US/docs/Web/API/setInterval}
  */
 
-// #reqion typedef
-/** 
- * @callback FutureCallback
- * @returns {void}
- */
-// #endregion
 /**
  * Synchronous
- * @param {Date | number} date 
- * @param {FutureCallback} cb 
+ * @param {Date} date 
+ * @param {FutureCallback} cb
  */
 function callInFutureSync(date, cb) {
-
+    // Your solution here
 }
 
 /**
  * Asynchronous
- * @param {Date | number} date 
+ * @param {Date} date 
  * @param {FutureCallback} cb 
  */
 function callInFutureAsync(date, cb) {
-
+    // Your solution here
 }
+
+
+/* #reqion(collapsed) typedef */
+
+/** 
+ * @callback FutureCallback
+ * @returns {void}
+ */
+
+/* #endregion */

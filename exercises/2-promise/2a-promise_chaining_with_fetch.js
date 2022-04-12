@@ -17,21 +17,3 @@ import fetch from "node-fetch";
 function callHttpBin() {
 
 }
-
-/**
- * 2 -
- *      If you haven't already done it, we're taking the same exercise as in one But will
- *      translate a errornous response into a promise rejection, for this we're going to
- *      use a small utility function and do the exercise again.
- */
-/**
- * @param {string} url 
- * @returns {Promise<any>}
- */
-function fetchWithRejectOnError(url) {
-    
-}
-
-function callHttpBin() {
-
-}
