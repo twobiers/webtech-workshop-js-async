@@ -41,7 +41,7 @@ Open the VSCode terminal and run `npm install` in the project directory.
 ### Standalone Installation
 
 **Prerequisites**
-- [Node.JS](https://nodejs.org/en/)
+- [Node.JS](https://nodejs.org/en/) (Should work with 14.x and 16.x) - 16.13.1 tested
 
 **Recommendations**
 - [Visual Studio Code](https://code.visualstudio.com/)
