@@ -1,25 +1,29 @@
 import fetch from "node-fetch";
 
- /**
-  * @returns {Promise<any>}
-  */
-async function fetch404() {
-    const response = await fetch("https://httpbin.org/status/404");
-    if(!response.ok) {
-        throw new Error(response);
-    }
-    return response.body;
-}
- 
-async function callHttpBin() {
-    try {
-        await fetch404();
-    } 
-    catch(err) {
-        console.log(`Received an errornous response from ${err.url}`);
-        const res = await fetch("https://httpbin.org/status/200");
-        console.log(`Received Status ${res.status} from ${res.url}`);
-    }
+async function fetchResults() {
+    const logResult = (name) => {
+        console.log(`Successfully fetched Result ${name}`);
+    };
+
+    // You can also use 
+    //    const resultA = fetch("https://httpbin.org/delay/2")
+    // but a function is faster. Question for the workshop participants: Why is a it?
+    const resultA = () => fetch("https://httpbin.org/delay/2")
+        .then(res => logResult("A"));
+
+    const resultB = () => fetch("https://httpbin.org/delay/1")
+        .then(res => logResult("B"));
+
+    const resultC = () => fetch("https://httpbin.org/delay/3")
+        .then(res => logResult("C"));
+
+    return Promise.all([resultA(), resultB(), resultC()]);
 }
 
-callHttpBin();
+const startDate = Date.now();
+
+fetchResults()
+    .then(() => {
+        const endDate = Date.now();
+        console.log(`Execution completed after ${endDate - startDate}ms`);
+    });
