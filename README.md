@@ -58,3 +58,11 @@ Otherwise you can use the node executable with the exercise file path as an argu
 ```js
 node './exercises/1-callbacks/1a-guess_the_order.js'
 ```
+
+# License
+
+Two licenses apply:
+
+* [AGPL-3.0 or later](./LICENSE.AGPL-3.0-or-later) applies to
+    * Code which is part of the content if no other license is specified within the same asset
+* [CC-BY-NC-4.0](./LICENSE.CC-BY-NC-4.0) applies to any non-code content if not specified otherwise.
