@@ -69,5 +69,17 @@ async function printSomething() {
 ```
 
 ```js
-
+while(true) {
+    // Task Queue
+    if(taskQueue.hasTasks()) {
+        const task = taskQueue.dequeue();
+        task.execute();
+    }
+    // Microtask Queue
+    while(μTaskQueue.hasTasks()) {
+        const μtask = μtaskQueue.dequeue();
+        μtask.execute();
+    }
+    updateRendering();
+}
 ```
