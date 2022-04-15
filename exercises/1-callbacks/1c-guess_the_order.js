@@ -1,4 +1,6 @@
 /**
+ * Imagine you execute this script file. In which order messages will be 
+ * logged into the console?
  * Try to guess the order the output occurs from your understanding
  * and then validate your guess by running the code.
  */
@@ -14,3 +16,7 @@ function second() {
 
 setTimeout(first, 0);
 setTimeout(second, 0);
+
+// My Guess:
+// 1. 
+// 2.

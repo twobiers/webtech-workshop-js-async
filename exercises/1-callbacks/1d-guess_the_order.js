@@ -1,4 +1,6 @@
 /**
+ * Imagine you execute this script file. In which order messages will be 
+ * logged into the console?
  * Try to guess the order the output occurs from your understanding
  * and then validate your guess by running the code.
  */
@@ -43,3 +45,12 @@ setTimeout(() => {
     }, 0)
     first();
 }, 0);
+
+// My Guess:
+// 1. 
+// 2.
+// 3. 
+// 4.
+// 5.
+// 6.
+// 7.

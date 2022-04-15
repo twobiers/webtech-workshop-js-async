@@ -1,6 +1,7 @@
-/** 1 - Call in Future
+/** 
+ * Writing Callbacks
  *  Write a function that accepts a date in the future and a parameterless callback function.
- *  The callback should be executed once the date has been passed
+ *  The callback should be executed once the date has been passed.
  *  Try to implement a synchronous version and then translate it into an asynchronous version
  *  You can use the following Web-APIs:
  *      - setTimeout {@link https://developer.mozilla.org/en-US/docs/Web/API/setTimeout}

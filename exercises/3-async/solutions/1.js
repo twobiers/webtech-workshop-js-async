@@ -5,7 +5,9 @@ async function fetchResults() {
         console.log(`Successfully fetched Result ${name}`);
     };
 
-    // Question for the workshop participants: Why is a function faster?
+    // You can also use 
+    //    const resultA = fetch("https://httpbin.org/delay/2")
+    // but a function is faster. Question for the workshop participants: Why is a it?
     const resultA = () => fetch("https://httpbin.org/delay/2")
         .then(res => logResult("A"));
 
