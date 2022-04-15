@@ -18,3 +18,6 @@ import { sendGetHttpRequest } from "../util/xhr.js";
 function callHttpBin() {
     // Your solution here
 }
+
+// Test
+callHttpBin();

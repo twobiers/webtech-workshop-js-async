@@ -26,6 +26,15 @@ function callInFutureAsync(date, cb) {
     // Your solution here
 }
 
+// Test
+callInFutureSync(Date.now() + 1000, () => {
+    console.log("[Sync] Hello from the future.");
+});
+
+callInFutureAsync(Date.now() + 1000, () => {
+    console.log("[Async] Hello from the future.");
+});
+
 
 /* #reqion(collapsed) typedef */
 

@@ -17,3 +17,6 @@ import fetch from "node-fetch";
 function callHttpBin() {
 
 }
+
+// Test
+callHttpBin();
