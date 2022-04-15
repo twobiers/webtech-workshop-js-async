@@ -1,7 +1,3 @@
-// Gegeben ist folgender Code. Aufgabe ist es den 
-// Fehler in dem Promise.catch() abzufangen.
-// Es gibt insgesamt 3 Möglichkeiten.
-
 /**
  * Given is the following code. funcThatReturnsAPromise returns a promise 
  * and calls an errornouse function.
