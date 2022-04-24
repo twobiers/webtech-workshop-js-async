@@ -5,7 +5,6 @@ Material and Resources for the "Concurrency in JavaScript" Workshop.
 ## Directory Structure
 ```
 workshop-js-async/      <-- Project Root
-├── examples/          <-- Demonstration Pages
 ├── exercises/         <-- Exercises for the Workshop
 │   ├── 1-callbacks/   <-- Part 1 (Callbacks)
 │   ├── 2-promise/     <-- Part 2 (Promises)
