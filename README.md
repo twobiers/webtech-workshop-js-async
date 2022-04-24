@@ -4,12 +4,13 @@ Material and Resources for the "Concurrency in JavaScript" Workshop.
 
 ## Directory Structure
 ```
-workshop-js-async/      <-- Project Root
+workshop-js-async/     <-- Project Root
 ├── exercises/         <-- Exercises for the Workshop
 │   ├── 1-callbacks/   <-- Part 1 (Callbacks)
 │   ├── 2-promise/     <-- Part 2 (Promises)
 │   └── 3-async/       <-- Part 3 (Async / Await)
 ├── misc/              <-- Other documents and Material
+│   ├── snippets/      <-- Code Snippets
 ├── slides/            <-- Slides
 ```
 
