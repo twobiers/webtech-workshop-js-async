@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+        color: white;
+        background-color: darkslategrey;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-items: stretch;
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .elements {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .elements > * {
+        flex: 1 1 0px;
+        margin: 6px;
+    }
+
+    .element-wrapper {
+        padding: 20px;
+        border: 2px dotted;
+        border-color: white;
+        display: flex;
+        flex-direction: column;
+    }
+ 
+    textarea {
+        font-size: 20px;
+        width: 100%;    
+    }
+
+    .toolbar {
+        display: flex;
+        flex-direction: row;
+    }
+    .toolbar > * {
+        margin: 6px;
+    }
+
+    hr {
+        border-top: 3px solid #bbb;
+        width: 100%;
+    }
+    #timerValue {
+        color: red;
+    }
+
+  </style>
+</head>
+
+<body>
+    <h1>The Async Playground</h1>
+    <p>This site's purpose is to play around with several asynchronous methods in the browser, play around with their behaviour and use the devtools to try debugging things</p>
+    <div class="wrapper">
+        <div class="element-wrapper">
+            <h2>Actions</h2>
+            <div class="toolbar">
+                <button type="button" id="alert">Alert Me!</button>
+            </div>
+        </div>
+        <div class="elements">
+            <div class="element-wrapper">
+                <h2>The Clock</h2>
+                <span id="clock"></span>
+                <input type="range" min="1" max="10000" value="1000" class="slider" id="timerRange">
+                <p>Interval Value: <span id="timerValue">1000</span>ms</p>
+            </div>
+            <div class="element-wrapper"></div>
+            <div class="element-wrapper"></div>
+        </div>
+        <hr>
+        <div class="element-wrapper">
+            <h2>Event Log</h2>
+            <textarea disabled rows="10" cols="100" class="boxsizingBorder" id="eventLog"></textarea>
+            <div class="toolbar">
+                <button type="button" id="clearLog">Clear Event Log!</button>
+            </div>
+        </div>
+    </div>
+    <!-- Toolbar -->
+    <script>
+        const bntAlert = document.getElementById("alert");
+        bntAlert.addEventListener("click", () => window.alert("Alarm!"));
+    </script>
+
+    <!-- The Clock -->
+    <script>
+        const elClock = document.getElementById("clock");
+        const elTimeSlider = document.getElementById("timerRange");
+        const elTimerValue = document.getElementById("timerValue");
+        const updateTime = () => {
+            const now = new Date();
+            elClock.innerText = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+            elClock.innerHTML += `<small style='margin-left: 3px'>${now.getMilliseconds()}</small>`
+        }
+        const updateValue = (value) => elTimerValue.innerText = value;
+        const scheduleUpdateTimeTask = (interval) => setInterval(() => {
+            updateTime();
+        }, interval);
+        
+        let timer = scheduleUpdateTimeTask(1000);
+        elTimeSlider.addEventListener("change", (event) => {
+            console.log(event);
+            const newValue = event.target.value;
+            clearInterval(timer);
+            timer = scheduleUpdateTimeTask(newValue);
+            updateValue(newValue);
+        });
+
+        updateTime();
+    </script>
+
+    <!-- Event Log-->
+    <script>
+        const bntClear = document.getElementById("clearLog");
+        const elLog = document.getElementById("eventLog");
+        const logMessage = (msg) => elLog.innerText += `[${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}] ${msg}`;
+        bntClear.addEventListener("click", () => elLog.innerText = '');
+        document.addEventListener("")
+    </script>
+</body>
+
+</html>
