@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="description" content="A blocking Webpage" />
+  <meta charset="utf-8">
+  <title>Stop the Block!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <style>
+    body {
+      background-color: darkslategrey;
+      color: white;
+    }
+    .container {
+      margin: 2em;
+      display: flex;
+      flex-direction: row;
+    }
+    .container > * {
+      margin: 0.4em;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;;
+    }
+    .left > * {
+      margin: 0.4em;
+    }
+    .event-loop {
+      overflow: visible;
+      margin-bottom: 0.4em;
+    }
+    .points {
+      animation: rot 2s linear infinite;
+      transform-origin: 50% 50%;
+    }
+    .btn-row {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: row;
+    }
+    .btn-row > * {
+      margin: 0.4em;
+    }
+    #result {
+      width: 100%;
+      height: 20em;
+    }
+
+    @keyframes rot  {
+      0% {
+        transform:  rotate(0deg);
+      }
+      100% {
+        transform:  rotate(360deg);
+      } 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <svg class="r-stretch event-loop" viewBox="0 0 100 100">  
+        <g class="points"> 
+          <circle class="ciw" cx="50" cy="50" r="50" stroke="#fff" stroke-width="10" fill="none"  />
+          <circle class="ci1" cx="100" cy="50" r="5" />
+        </g>
+      </svg>
+      <div class="btn-row">
+        <button id="blockBtn">Block Me</button>
+        <button id="clearBtn">Clear</button>
+        <span>
+          <strong>Es ist <span id="txtTime"></span> Uhr</strong>
+        </span>
+      </div>
+      <div class="result-box">
+        <textarea id="result" readonly>
+        </textarea>
+      </div>
+    </div>
+    <div class="right">
+      <p>
+        Diese Aufgabe soll demonstrieren wie sich ein blockierender Event Loop äußert.
+        Auf der linken Seite ist konzeptuell ein animierter Event Loop dargestellt, der 
+        mit einem Klick auf den <i>Block Me</i> button blockiert werden kann. Im Hintergrund
+        wird eine komplizierte Berechnung vorgetäuscht. Das Ergebnis der Berechnung wird 
+        daraufhin in die darunter liegende Textbox geschrieben.
+      </p>
+      <p>
+        Die Seite ist als Playground gedacht um mit dem Event Loop und die Auswirkungen von 
+        Blockierungen herumzuspielen. 
+      </p>
+      <p>
+        Um die Blockierung aufzueheben <strong>ohne</strong> die Berechnung aufzueheben, sind erweiterete 
+        Konzepte wie <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a>
+        notwendig.
+      </p>
+    </div>
+  </div>
+  
+  
+  <script>
+    const txtTime = document.getElementById("txtTime");
+    const resultArea = document.getElementById("result");
+    const dateTimeFormat = new Intl.DateTimeFormat("de-DE", { 
+      dateStyle: "short",
+      timeStyle: "medium"
+    });
+    txtTime.innerText = dateTimeFormat.format(Date.now());
+    
+    setInterval(() => {
+      txtTime.innerText = dateTimeFormat.format(Date.now());
+    }, 1000);
+
+    const complexArithmeticFunction = (n) => {
+      const now = Date.now();
+      // 0.2 Sekunden Timeout
+      while(Date.now() - now <= 200) {}
+      return n;
+    };
+
+    document.getElementById("blockBtn").addEventListener("click", () => {
+      resultArea.textContent = "";
+      for(let i = 0; i < 10; ++i) {
+        const res = complexArithmeticFunction(i);
+        resultArea.textContent += res + "\n";
+      }
+    });
+
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      resultArea.textContent = "";
+    });
+  </script>
+</body>
+</html>
